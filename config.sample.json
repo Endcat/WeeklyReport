@@ -1,0 +1,7 @@
+{
+    "SESSION_TYPE": "filesystem",
+    "SESSION_FILE_DIR": "/tmp/flask_session",
+    "SESSION_COOKIE_HTTPONLY": true,
+    "PERMANENT_SESSION_LIFETIME": 604800,
+    "SECRET_KEY": "secret"
+}

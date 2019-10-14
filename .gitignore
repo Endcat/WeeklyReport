@@ -1,0 +1,8 @@
+*.pyc
+venv
+*.db
+__pycache__
+.DS_Store
+.idea
+.vscode
+config.json

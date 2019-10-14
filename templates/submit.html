@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>XDSEC 周报平台</title>
+    </head>
+    <body>
+        <h1 align="center">第 {{week}} 周 周报提交</h1>
+        <p align="center" style="border:0px;margin:0">
+        <span style="float:left"><a href='/index'>周报索引</a>&nbsp;&nbsp;&nbsp;</span>
+        <span style="float:right"><a href='/logout'>登出</a></span>
+        </p>
+        <br />
+        <hr />
+        <p><b>昵称:</b> {{user.name}}</p>
+        <p><b>电子邮件: </b> <a href='{{user.email}}'>{{user.email}}</a></p>
+        <p><b>周报内容:</b></p>
+        <form action="submit" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+            <textarea rows="40" cols="120" name='content'>{{content}}</textarea>
+            <br />
+            <input type="submit" name="submi" value="提交"/>
+        </form>
+    </body>
+</html>
