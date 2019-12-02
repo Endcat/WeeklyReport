@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>XDSEC 周报平台</title>
+    </head>
+    <body>
+        <h1 align="center">{{author.name}} 的{% if report %}第 {{report.week}} 周{% endif %}周报</h1>
+        <p align="center" style="border:0px;margin:0">
+            <span style="float:left"><a href='/index'>周报索引</a>&nbsp;&nbsp;&nbsp;</span>
+            <span style="float:right"><a href='/submit'>提交周报</a></span>
+        </p>
+        <br />
+        <hr />
+        <p>
+        {% for item in all_reports %}
+        <a style="white-space:nowrap;" href='/view/user/{{author.id}}/{{item.week}}'>{{item.week}}</a>
+        {% endfor %}
+        </p>
+        <br />
+        {% if report %}
+        <div style="overflow:auto">
+            <p><b>昵称:</b> {{author.name}}</p>
+            <p><b>电子邮件: </b> <a href='{{author.email}}'>{{author.email}}</a></p>
+            <p><b>日期:</b> {{report.date}}</p>
+            <p><b>周报内容:</b></p>
+            <pre style="white-space:pre-wrap; word-wrap:break-word;">{{report.content}}</pre>
+        </div>
+        {% endif %}
+    </body>
+</html>
